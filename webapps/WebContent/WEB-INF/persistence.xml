@@ -1,0 +1,24 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+	<persistence-unit name="corsoWebPersistence">
+
+		<jta-data-source>connessioneCorsoJpa</jta-data-source>
+
+ 
+		<properties>
+
+			<!--  <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/corso_jpa/?serverTimezone=UTC" /> -->
+			<property name="openejb.jpa.auto-scan" value="true" />
+			<!-- serve x dire al server, quando parti, cerca in tutti i progetti tutte le classi che hanno l'annotation entity  e mappale, considerale come jpa entity 
+			altrimenti dovremo scrivere il nome di ogni classe nel tag <class>
+			-->
+			<!-- property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" /-->
+			<!--  questa proprietà se impostata consente al server di creare per noi le tabelle con le varie chiavi primarie e chiavi esterne all'interno del db
+			MA va utilizzata solo in ambiente di sviluppo, perchè  ogni volta che parte il server vi cancella il db e lo ricrea -->
+			
+			
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
